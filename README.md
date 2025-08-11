@@ -68,7 +68,7 @@ This implementation demonstrates the practical application of threshold cryptogr
    http://localhost:8000
    ```
 
-## 🎯 How It Works
+## How It Works
 
 ### 1. Threshold Randomness Generation
 dcipher network generates randomness through threshold consensus
@@ -137,11 +137,11 @@ dcipher Network is the first generalized threshold network, enabling:
 - **Threshold Cryptography**: Explore academic papers and research
 - **BLS Signatures**: Boneh-Lynn-Shacham signature specification
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests.
 
-## 📄 License
+## License
 
 MIT License - see LICENSE file for details.
 
