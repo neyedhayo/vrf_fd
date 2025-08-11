@@ -1,0 +1,16 @@
+{
+  "name": "fair-dice-dcipher",
+  "version": "1.0.0",
+  "description": "Fair dice rolling using dcipher Network's threshold cryptography",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx http-server -p 8000"
+  },
+  "dependencies": {
+    "@randa-mu/randomness-js": "latest"
+  },
+  "keywords": ["dcipher", "threshold-cryptography", "vrf", "fair-randomness", "dice"],
+  "author": "Dayo",
+  "license": "MIT"
+}

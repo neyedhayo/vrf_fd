@@ -1,17 +1,16 @@
 # Fair Dice VRF - dcipher Network
 
-A beautiful, modern demonstration of verifiable fair randomness using **dcipher Network's threshold cryptography**. This application showcases how distributed trust eliminates single points of failure in random number generation.
+Verifiable Randomness Function (VRF) in action on dice game using **dcipher Network's threshold cryptography**. This simple implementation showcases how distributed trust eliminates single points of failure in random number generation.
 
-## ✨ Features
+## Features
 
 - 🎲 **Cryptographically Fair**: Uses dcipher's threshold network for tamper-proof randomness
 - ⚖️ **No Modulo Bias**: Implements rejection sampling for perfectly fair dice distribution
 - 🔍 **Publicly Verifiable**: Anyone can verify randomness through threshold cryptographic proofs
 - 🌐 **Distributed Trust**: No single party can manipulate the outcome
-- 💫 **Beautiful UI**: Modern, responsive design with smooth animations
 - ⚡ **Real-time**: Live connection to dcipher network
 
-## 🏗️ Architecture
+## Architecture
 
 This implementation demonstrates the practical application of threshold cryptography concepts covered in the article "From Polynomials to Distributed Secrets: Understanding the Foundations of dcipher Network with Threshold Cryptography."
 
@@ -27,7 +26,7 @@ This implementation demonstrates the practical application of threshold cryptogr
 - **Cryptographic Proofs**: BLS threshold signatures provide verifiability
 - **No Single Point of Failure**: Mathematical guarantees of fairness
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Modern web browser with ES6 module support
@@ -38,10 +37,10 @@ This implementation demonstrates the practical application of threshold cryptogr
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd fair-dice-dcipher
+   cd vrf_fd
    ```
 
-2. **Install dependencies**
+2. **Install dependencies (optional: if you have python installed)**
    ```bash
    npm install
    ```
@@ -51,7 +50,7 @@ This implementation demonstrates the practical application of threshold cryptogr
    # Option 1: Using npm script
    npm run start
    
-   # Option 2: Using Python
+   # Option 2: Using Python (Recommended)
    python -m http.server 8000
    
    # Option 3: Using Node.js
@@ -66,46 +65,35 @@ This implementation demonstrates the practical application of threshold cryptogr
 ## 🎯 How It Works
 
 ### 1. Threshold Randomness Generation
+dcipher network generates randomness through threshold consensus
+
 ```javascript
-// dcipher network generates randomness through threshold consensus
 const randomnessData = await fetchDcipherRandomness();
 ```
 
 ### 2. Fair Dice Conversion
+Rejection sampling eliminates modulo bias
+
 ```javascript
-// Rejection sampling eliminates modulo bias
 const diceResult = avoidModuloBias(randomBytes, 6) + 1;
 ```
 
 ### 3. Cryptographic Verification
+Verify threshold proofs and signatures
+
 ```javascript
-// Verify threshold proofs and signatures
 const isValid = await verify(round, signature, thresholdProof, randomness);
 ```
 
-## 🔧 Project Structure
 
-```
-fair-dice-dcipher/
-├── index.html              # Main application interface
-├── js/
-│   ├── dice.js             # Core dice rolling logic & dcipher integration
-│   ├── verify.js           # Threshold cryptography verification
-│   └── utils.js            # Helper functions & bias prevention
-├── css/
-│   └── style.css           # Modern responsive styling
-├── package.json            # Dependencies and scripts
-└── README.md              # This file
-```
-
-## 🎮 Usage
+## Usage
 
 1. **Roll the Dice**: Click "Roll Fair Dice" to generate a cryptographically fair result
 2. **View Details**: See the randomness hash, round number, and committee info
 3. **Verify Result**: Click "Verify Randomness" to check cryptographic proofs
-4. **Review History**: Browse previous rolls in the history section
+4. **Review History**: Review previous rolls in the history section
 
-## 🔐 Security Features
+## Security Features
 
 ### Threshold Cryptography
 - **Distributed Generation**: No single party can bias the outcome
@@ -118,7 +106,7 @@ fair-dice-dcipher/
 - **Public Verifiability**: Anyone can verify randomness independently
 - **Tamper Evidence**: Any manipulation attempt is cryptographically detectable
 
-## 🧮 Mathematical Background
+## Mathematical Background
 
 This implementation demonstrates several key concepts:
 
@@ -127,7 +115,7 @@ This implementation demonstrates several key concepts:
 - **BLS Signatures**: Signature schemes that aggregate naturally
 - **Pairing-Based Cryptography**: The mathematical engine behind verification
 
-## 🌐 dcipher Network
+## dcipher Network
 
 dcipher Network is the first generalized threshold network, enabling:
 
@@ -136,11 +124,11 @@ dcipher Network is the first generalized threshold network, enabling:
 - **Verifiable Randomness**: Bias-resistant random number generation
 - **Plugin Architecture**: Extensible threshold operations
 
-## 📚 Learn More
+## Learn More
 
 - **dcipher Network**: [docs.dcipher.network](https://docs.dcipher.network)
 - **Randamu**: [randa.mu](https://randa.mu)
-- **Threshold Cryptography**: Academic papers and research
+- **Threshold Cryptography**: Explore academic papers and research
 - **BLS Signatures**: Boneh-Lynn-Shacham signature specification
 
 ## 🤝 Contributing
