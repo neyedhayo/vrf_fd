@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fair Dice Roll - dcipher Network</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🎲</span>
+                <h1>Fair Dice</h1>
+            </div>
+            <p class="subtitle">Powered by dcipher Network's Threshold Cryptography</p>
+        </header>
+
+        <main class="main">
+            <!-- Dice Rolling Section -->
+            <section class="dice-section">
+                <div class="dice-container">
+                    <div class="dice-display" id="diceDisplay">?</div>
+                    <div class="dice-animation" id="diceAnimation"></div>
+                </div>
+                
+                <button id="rollButton" class="roll-button">
+                    <span class="button-text">Roll Fair Dice</span>
+                    <span class="button-icon">🎲</span>
+                </button>
+                
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <span>Generating verifiable randomness...</span>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultSection" class="result-section hidden">
+                <h3>Latest Roll Result</h3>
+                <div class="result-card">
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <label>Dice Result</label>
+                            <span id="diceResult" class="result-value">-</span>
+                        </div>
+                        <div class="result-item">
+                            <label>dcipher Round</label>
+                            <span id="dcipherRound" class="result-value">-</span>
+                        </div>
+                        <div class="result-item">
+                            <label>Timestamp</label>
+                            <span id="timestamp" class="result-value">-</span>
+                        </div>
+                        <div class="result-item full-width">
+                            <label>Randomness Hash</label>
+                            <span id="randomnessHex" class="result-value hex-value">-</span>
+                        </div>
+                    </div>
+                    
+                    <div class="verification-section">
+                        <button id="verifyButton" class="verify-button">
+                            <span>🔍 Verify Randomness</span>
+                        </button>
+                        <div id="verificationResult" class="verification-result"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- History Section -->
+            <section class="history-section">
+                <h3>Recent Rolls</h3>
+                <div id="rollHistory" class="history-grid"></div>
+            </section>
+
+            <!-- How It Works Section -->
+            <section class="explanation-section">
+                <h3>How It Works</h3>
+                <div class="explanation-grid">
+                    <div class="explanation-card">
+                        <div class="card-icon">🔐</div>
+                        <h4>Threshold Cryptography</h4>
+                        <p>Uses dcipher's distributed network to generate tamper-proof randomness through multiple nodes</p>
+                    </div>
+                    <div class="explanation-card">
+                        <div class="card-icon">⚖️</div>
+                        <h4>No Modulo Bias</h4>
+                        <p>Implements rejection sampling to ensure perfectly fair dice distribution</p>
+                    </div>
+                    <div class="explanation-card">
+                        <div class="card-icon">✅</div>
+                        <h4>Publicly Verifiable</h4>
+                        <p>Anyone can verify the randomness using cryptographic proofs</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Built with <span class="heart">♥</span> using dcipher Network</p>
+        </footer>
+    </div>
+
+    <script type="module" src="js/dice.js"></script>
+</body>
+</html>
