@@ -2,6 +2,12 @@
 
 Verifiable Randomness Function (VRF) in action on dice game using **dcipher Network's threshold cryptography**. This simple implementation showcases how distributed trust eliminates single points of failure in random number generation.
 
+<div align="center">
+  <img src="img/threshcrypt.png" alt="Fair Dice VRF Application Screenshot" width="800">
+</div>
+
+<br>
+
 ## Features
 
 - 🎲 **Cryptographically Fair**: Uses dcipher's threshold network for tamper-proof randomness
