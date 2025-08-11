@@ -1,12 +1,7 @@
-/**
- * Verify dcipher threshold randomness
- * This implements verification for dcipher's threshold cryptography
- */
-
 export async function verify(round, signature, thresholdProof, randomness) {
     try {
-        // For demonstration, we'll implement a multi-step verification process
-        // In production, this would verify the actual threshold cryptographic proofs
+        // For demonstration, this implements a multi-step verification process
+        // In production, this would verify the actual threshold cryptographic proofs (not applicable here)
         
         // Step 1: Verify the signature format
         if (!signature || signature.length < 10) {

@@ -3,7 +3,7 @@ import { hexToBytes, avoidModuloBias, formatTimestamp } from './utils.js';
 
 class FairDice {
     constructor() {
-        // dcipher Network endpoints (hypothetical based on research)
+        // dcipher Network endpoints
         this.dcipherEndpoint = 'https://api.dcipher.network/v1/randomness/latest';
         this.dcipherVerifyEndpoint = 'https://api.dcipher.network/v1/verify';
         this.rollHistory = [];
@@ -21,24 +21,20 @@ class FairDice {
             this.showLoading(true);
             this.animateDice();
 
-            // Fetch latest randomness from dcipher network
             const randomnessData = await this.fetchDcipherRandomness();
             
-            // Convert to fair dice roll (1-6)
             const diceResult = this.convertToDiceRoll(randomnessData.randomness);
             
-            // Create roll record
             const rollRecord = {
                 dice: diceResult,
                 round: randomnessData.round,
                 randomness: randomnessData.randomness,
                 signature: randomnessData.signature,
-                threshold_proof: randomnessData.threshold_proof, // dcipher specific
-                committee_id: randomnessData.committee_id, // dcipher specific
+                threshold_proof: randomnessData.threshold_proof, 
+                committee_id: randomnessData.committee_id, 
                 timestamp: new Date(randomnessData.unix_time * 1000)
             };
 
-            // Update UI
             this.displayRollResult(rollRecord);
             this.addToHistory(rollRecord);
             this.showLoading(false);
@@ -59,7 +55,6 @@ class FairDice {
             }
             return await response.json();
         } catch (error) {
-            // Fallback to simulated dcipher response for demo
             console.warn('Using demo data - dcipher network not available');
             return this.generateDemoRandomness();
         }
@@ -89,7 +84,6 @@ class FairDice {
     }
 
     displayRollResult(rollRecord) {
-        // Animate the result display
         const diceDisplay = document.getElementById('diceDisplay');
         diceDisplay.style.transform = 'scale(1.2)';
         setTimeout(() => {
@@ -106,7 +100,6 @@ class FairDice {
         // Store for verification
         this.currentRoll = rollRecord;
 
-        // Show result section with animation
         const resultSection = document.getElementById('resultSection');
         resultSection.classList.remove('hidden');
         resultSection.style.opacity = '0';
@@ -168,7 +161,6 @@ class FairDice {
         const diceDisplay = document.getElementById('diceDisplay');
         const animation = document.getElementById('diceAnimation');
         
-        // Start rolling animation
         let rollCount = 0;
         const rollInterval = setInterval(() => {
             diceDisplay.textContent = Math.floor(Math.random() * 6) + 1;
@@ -194,7 +186,6 @@ class FairDice {
     }
 
     showError(message) {
-        // Simple error display - could be enhanced with a toast notification
         alert(message);
     }
 
@@ -208,7 +199,6 @@ class FairDice {
     }
 }
 
-// Initialize the app
 document.addEventListener('DOMContentLoaded', () => {
     new FairDice();
 });
